@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer="defer" src="http://localhost:3000/library.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    function defer(method) {
+      if (window.BookingLibrary) {
+        const root = new window.BookingLibrary("root", undefined);
+        root.init();
+        window.document.addEventListener(
+          "openBookingModal",
+          ({ param }) => { console.log("open modal ", param.id); },
+          false
+        );
+        window.document.addEventListener(
+          "deleteMyBooking",
+          ({ param }) => {
+            console.log("reservation ", param.reservationId, 'delete object ', param.idObject);
+          },
+          false
+        );
+        window.document.addEventListener(
+          "editObject",
+          ({ param }) => {
+            console.log(JSON.stringify(param.item));
+          },
+          false
+        );
+        window.document.addEventListener(
+          "addObject",
+          ({ param }) => {
+            console.log(JSON.stringify(param.item));
+          },
+          false
+        );
+        window.document.addEventListener(
+          "save",
+          ({ param }) => {
+            console.log(JSON.stringify(param.json));
+          },
+          false
+        );
+        window.document.addEventListener(
+          "return",
+          () => {
+            console.log('return');
+          },
+          false
+        );
+      }
+      else {
+        setTimeout(function () { defer(method) }, 50);
+      }
+    }
+    defer()
+  </script>
+</body>
+
+</html>
