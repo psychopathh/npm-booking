@@ -1,7 +1,17 @@
 {
-  "name": "meta-template",
+  "name": "booking-npm-test",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "version": "0.1.0",
   "private": true,
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
   "dependencies": {
     "@better-hooks/performance": "^1.1.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -11,6 +21,7 @@
     "@types/node": "^20.5.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.16",
     "axios": "^1.4.0",
     "formik": "^2.4.5",
     "react": "^18.2.0",
@@ -20,7 +31,7 @@
     "react-query": "^3.39.3",
     "react-scripts": "5.0.1",
     "react-zoom-pan-pinch": "^3.1.0",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "transformation-matrix": "^2.15.0",
     "typescript": "^5.1.6",
     "uuid": "^9.0.1",
@@ -30,6 +41,7 @@
   "scripts": {
     "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start --no-ts",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build && cp library.js ./build/library.js",
+    "build-rollup": "DISABLE_ESLINT_PLUGIN=true rollup -c --bundleConfigAsCjs",
     "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
     "eject": "DISABLE_ESLINT_PLUGIN=true react-scripts eject"
   },
@@ -50,5 +62,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.23.3",
+    "@babel/plugin-transform-class-properties": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "postcss": "^8.4.31",
+    "rollup": "^4.4.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }
