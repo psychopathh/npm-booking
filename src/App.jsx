@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import StageScene from "./components/blocks/StageScene";
+import "./index.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {

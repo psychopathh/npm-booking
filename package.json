@@ -1,8 +1,13 @@
 {
   "name": "booking-npm-test",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types.d.ts",
+  "browser": {
+    "path": false,
+    "stream": false
+  },
   "files": [
     "dist"
   ],
@@ -23,19 +28,21 @@
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.16",
     "axios": "^1.4.0",
+    "booking-npm-test": "file:./booking-npm-test-v0.1.0.tgz",
     "formik": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-inlinesvg": "^4.0.4",
     "react-loader-spinner": "^5.3.4",
     "react-query": "^3.39.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "4.0.2",
     "react-zoom-pan-pinch": "^3.1.0",
     "tailwindcss": "^3.3.5",
     "transformation-matrix": "^2.15.0",
     "typescript": "^5.1.6",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4",
+    "webpack": "4.44.2",
     "zustand": "^4.4.1"
   },
   "scripts": {
@@ -66,18 +73,27 @@
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.23.3",
     "@babel/plugin-transform-class-properties": "^7.23.3",
+    "@babel/plugin-transform-runtime": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@babel/runtime": "^7.23.2",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
+    "babel-loader": "8.1.0",
+    "browserify-zlib": "^0.2.0",
+    "crypto-browserify": "^3.12.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "path": "^0.12.7",
     "postcss": "^8.4.31",
     "rollup": "^4.4.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "stream": "^0.0.2",
+    "stream-http": "^3.2.0"
   }
 }
